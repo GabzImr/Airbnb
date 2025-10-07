@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiências Airbnb</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f7f9fa;
+      color: #484848;
+    }
+
+    header {
+      background-color: white;
+      padding: 15px 30px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #ff385c;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #484848;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff385c;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .filters {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .filters label {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .filters select, .filters input[type="date"] {
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      min-width: 160px;
+    }
+
+    .experiences-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 15px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222222;
+    }
+
+    .card-location {
+      font-size: 14px;
+      color: #717171;
+      margin-bottom: 12px;
+    }
+
+    .card-price {
+      font-weight: 700;
+      font-size: 16px;
+      color: #ff385c;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: white;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+      .filters {
+        flex-direction: column;
+      }
+      .filters select, .filters input[type="date"] {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Airbnb</a>
+  <nav>
+    <a href="acomodacoes.html">Acomodações</a>
+    <a href="experiencias.html" style="color:#ff385c; font-weight: 700;">Experiências</a>
+    <a href="servicos.html">Serviços</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Experiências únicas e inesquecíveis</h1>
+
+  <section class="filters" aria-label="Filtros de busca de experiências">
+    <div>
+      <label for="local">Local</label>
+      <select id="local" name="local">
+        <option value="">Qualquer lugar</option>
+        <option value="sao-paulo">São Paulo</option>
+        <option value="rio-de-janeiro">Rio de Janeiro</option>
+        <option value="florianopolis">Florianópolis</option>
+        <option value="belo-horizonte">Belo Horizonte</option>
+      </select>
+    </div>
+    <div>
+      <label for="data">Data</label>
+      <input type="date" id="data" name="data" />
+    </div>
+    <div>
+      <label for="tipo">Tipo</label>
+      <select id="tipo" name="tipo">
+        <option value="">Todos</option>
+        <option value="aula">Aulas e Workshops</option>
+        <option value="passeio">Passeios e Tours</option>
+        <option value="culinaria">Culinária</option>
+        <option value="aventura">Aventura</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="experiences-list" aria-label="Lista de experiências disponíveis">
+    <article class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Experiência: Tour gastronômico em São Paulo, R$150 por pessoa">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Mesa com comidas típicas brasileiras" />
+      <div class="card-content">
+        <h2 class="card-title">Tour gastronômico em São Paulo</h2>
+        <p class="card-location">São Paulo, Brasil</p>
+        <p class="card-price">R$ 150 por pessoa</p>
+      </div>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Experiência: Aula de surf em Florianópolis, R$200 por pessoa">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Pessoa surfando uma onda" />
+      <div class="card-content">
+        <h2 class="card-title">Aula de surf em Florianópolis</h2>
+        <p class="card-location">Florianópolis, Brasil</p>
+        <p class="card-price">R$ 200 por pessoa</p>
+      </div>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Experiência: Passeio cultural no Rio de Janeiro, R$120 por pessoa">
+      <img src="https://images.unsplash.com/photo-1526483360446-190651e65b42?auto=format&fit=crop&w=400&q=80" alt="Vista do Pão de Açúcar no Rio" />
+      <div class="card-content">
+        <h2 class="card-title">Passeio cultural no Rio de Janeiro</h2>
+        <p class="card-location">Rio de Janeiro, Brasil</p>
+        <p class="card-price">R$ 120 por pessoa</p>
+      </div>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-pressed="false" aria-label="Experiência: Workshop de culinária mineira em Belo Horizonte, R$180 por pessoa">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Prato típico mineiro em uma mesa" />
+      <div class="card-content">
+        <h2 class="card-title">Workshop de culinária mineira</h2>
+        <p class="card-location">Belo Horizonte, Brasil</p>
+        <p class="card-price">R$ 180 por pessoa</p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Airbnb, Inc. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

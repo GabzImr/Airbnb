@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Diferença de Datas</title>
+</head>
+<body>
+  <h1>Calcular diferença entre datas</h1>
+  
+  <label for="dataInicio">Data Início:</label>
+  <input type="date" id="dataInicio" value="2025-09-11" min="2025-09-01" max="2025-10-31" />
+  
+  <label for="dataFim">Data Fim:</label>
+  <input type="date" id="dataFim" value="2025-09-12" min="2025-09-01" max="2025-10-31" />
+  
+  <button onclick="calcularDiferenca()">Calcular Diferença</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    function calcularDiferenca() {
+      const inicio = new Date(document.getElementById('dataInicio').value);
+      const fim = new Date(document.getElementById('dataFim').value);
+      
+      if (fim < inicio) {
+        document.getElementById('resultado').textContent = 'A data fim não pode ser menor que a data início.';
+        return;
+      }
+      
+      const diffTime = Math.abs(fim - inicio);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      document.getElementById('resultado').textContent = `Diferença: ${diffDays} dia(s)`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Airbnb - Página Principal</title>
+  <style>
+   
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fa;
+      color: #484848;
+      min-height: 100vh;
+      padding-top: 70px; 
+    }
+
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #ff385c;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #484848;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff385c;
+      text-decoration: underline;
+    }
+
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    h1.section-title {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      color: #222222;
+    }
+
+    
+    .accommodations-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 15px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #222222;
+    }
+
+    .card-location {
+      font-size: 14px;
+      color: #6e6e6e;
+      margin-bottom: 12px;
+    }
+
+    .card-price {
+      font-weight: 700;
+      font-size: 16px;
+      color: #ff385c;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      h1.section-title {
+        font-size: 28px;
+      }
+
+      .accommodations-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo" aria-label="Página inicial Airbnb">
+   
+    <svg viewBox="0 0 100 100" width="30" height="30" fill="#FF385C" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L80 70 L50 90 L20 70 Z"/></svg>
+    Airbnb
+  </a>
+  <nav>
+    <a href="acomodacoes.html" style="color:#ff385c; font-weight:700;">Acomodações</a>
+    <a href="experiencias.html">Experiências</a>
+    <a href="servicos.html">Serviços</a>
+  </nav>
+</header>
+
+<main>
+  
+  <section aria-label="Acomodações recomendadas">
+    <h1 class="section-title">Encontre acomodações para sua próxima viagem</h1>
+
+    <div class="accommodations-list">
+      <article class="card" tabindex="0" role="button" aria-label="Apartamento em Copacabana, R$ 300 por noite">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=400&q=80" alt="Apartamento em Copacabana" />
+        <div class="card-content">
+          <h2 class="card-title">Apartamento em Copacabana</h2>
+          <p class="card-location">Rio de Janeiro, RJ</p>
+          <p class="card-price">R$ 300 / noite</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Casa na praia em Florianópolis, R$ 450 por noite">
+        <img src="https://images.unsplash.com/photo-1501183638714-768bb710ee14?auto=format&fit=crop&w=400&q=80" alt="Casa na praia em Florianópolis" />
+        <div class="card-content">
+          <h2 class="card-title">Casa na praia em Florianópolis</h2>
+          <p class="card-location">Florianópolis, SC</p>
+          <p class="card-price">R$ 450 / noite</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Chalé nas montanhas em Gramado, R$ 380 por noite">
+        <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=400&q=80" alt="Chalé nas montanhas em Gramado" />
+        <div class="card-content">
+          <h2 class="card-title">Chalé nas montanhas em Gramado</h2>
+          <p class="card-location">Gramado, RS</p>
+          <p class="card-price">R$ 380 / noite</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Apartamento moderno em São Paulo, R$ 320 por noite">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Apartamento moderno em São Paulo" />
+        <div class="card-content">
+          <h2 class="card-title">Apartamento moderno em São Paulo</h2>
+          <p class="card-location">São Paulo, SP</p>
+          <p class="card-price">R$ 320 / noite</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Airbnb - Serviços</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fa;
+      color: #484848;
+      min-height: 100vh;
+      padding-top: 70px; 
+    }
+
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: #ff385c;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #484848;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ff385c;
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      color: #ff385c;
+      font-weight: 700;
+    }
+
+    
+    main {
+      max-width: 1200px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    h1.section-title {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      color: #222222;
+    }
+
+    
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 15px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #222222;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #6e6e6e;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      font-weight: 700;
+      font-size: 16px;
+      color: #ff385c;
+    }
+
+    
+    @media (max-width: 600px) {
+      h1.section-title {
+        font-size: 28px;
+      }
+
+      .services-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo" aria-label="Página inicial Airbnb">
+   
+    <svg viewBox="0 0 100 100" width="30" height="30" fill="#FF385C" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L80 70 L50 90 L20 70 Z"/></svg>
+    Airbnb
+  </a>
+  <nav>
+    <a href="acomodacoes.html">Acomodações</a>
+    <a href="experiencias.html">Experiências</a>
+    <a href="servicos.html" class="active">Serviços</a>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="Serviços disponíveis">
+    <h1 class="section-title">Descubra nossos serviços</h1>
+
+    <div class="services-list">
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de limpeza residencial">
+        <img src="https://images.unsplash.com/photo-1580582931494-23dca7f199c4?auto=format&fit=crop&w=400&q=80" alt="Limpeza residencial" />
+        <div class="card-content">
+          <h2 class="card-title">Limpeza Residencial</h2>
+          <p class="card-description">Profissionais qualificados para manter sua casa sempre limpa e organizada.</p>
+          <p class="card-price">A partir de R$ 80</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de aluguel de carros">
+        <img src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7f90?auto=format&fit=crop&w=400&q=80" alt="Aluguel de carros" />
+        <div class="card-content">
+          <h2 class="card-title">Aluguel de Carros</h2>
+          <p class="card-description">Alugue carros modernos e confortáveis para explorar seu destino com liberdade.</p>
+          <p class="card-price">A partir de R$ 150 / dia</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de tours guiados">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Tours guiados" />
+        <div class="card-content">
+          <h2 class="card-title">Tours Guiados</h2>
+          <p class="card-description">Conheça os melhores pontos turísticos com guias locais experientes e amigáveis.</p>
+          <p class="card-price">A partir de R$ 120</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de chef particular">
+        <img src="https://images.unsplash.com/photo-1516684669134-de6f6eb85f97?auto=format&fit=crop&w=400&q=80" alt="Chef particular" />
+        <div class="card-content">
+          <h2 class="card-title">Chef Particular</h2>
+          <p class="card-description">Experimente pratos deliciosos preparados exclusivamente para você em seu local.</p>
+          <p class="card-price">A partir de R$ 300</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de transfer aeroporto">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Transfer aeroporto" />
+        <div class="card-content">
+          <h2 class="card-title">Transfer Aeroporto</h2>
+          <p class="card-description">Transporte confortável e seguro do aeroporto até seu destino final.</p>
+          <p class="card-price">A partir de R$ 70</p>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-label="Serviço de aluguel de bicicletas">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Aluguel de bicicletas" />
+        <div class="card-content">
+          <h2 class="card-title">Aluguel de Bicicletas</h2>
+          <p class="card-description">Explore a cidade de forma sustentável e divertida com nossas bicicletas.</p>
+          <p class="card-price">A partir de R$ 40 / dia</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
